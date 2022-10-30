@@ -13,12 +13,13 @@ public class IsPrime {
     }
 
     public static boolean isPrime(long a) {
-        if(a == 2)
-            return true;
-        else if(a % 2 == 0 || a <= 1)
+        if(a % 2 == 0)
+            return a == 2;
+        
+        if(a <= 1)
             return false;
 
-        for(long i = 3; i < a; i += 2) {
+        for(long i = 3; i * i <= a; i += 2) {
             if(a % i == 0) {
                 return false;
             }
