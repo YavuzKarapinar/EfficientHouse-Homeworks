@@ -19,7 +19,7 @@ public class Question3 {
             System.out.print("Mass of car: ");
             double mass = scanner.nextDouble();
 
-            System.out.printf("The mass of car is %.2fN%n", weight(mass, process));
+            System.out.printf("The weight of the car is %.2fN%n", weight(mass, process));
 
         }
     }
