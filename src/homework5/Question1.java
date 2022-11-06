@@ -22,11 +22,12 @@ public class Question1 {
         double guess = n/2;
         double r;
 
-        for(int i = 0; i < 5; i++) {
+        while (true) {
             double temp = guess;
             r = n / guess;
-            guess = (guess + r) / 2.;
-            if(temp <= guess * 0.01)
+            guess = (guess + r) / 2;
+
+            if(temp - guess <= temp * 0.01)
                 break;
         }
 
