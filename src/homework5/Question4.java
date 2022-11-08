@@ -14,18 +14,16 @@ public class Question4 {
         System.out.print("Number of Years: ");
         int years = scanner.nextInt();
 
-        System.out.print("Rate of Infilation: ");
+        System.out.print("Rate of Inflation: ");
         double rate = scanner.nextDouble();
 
-        System.out.printf("Cost of item: %.2f%n", costCalculation(cost, years, rate));
-
+        System.out.printf("Your product's cost %.2f with %.2f inflation rate in %d years later.", costCalculation(cost, years, rate), rate, years);
     }
 
     public static double costCalculation(double cost, int years, double rate) {
 
-        for (int i = 1; i <= years; i++) {
-            cost = cost + (cost * rate/100);
-        }
+        for (int i = 1; i <= years; i++)
+            cost += (cost * rate/100);
 
         return cost;
     }
