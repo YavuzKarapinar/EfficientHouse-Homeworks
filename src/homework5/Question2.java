@@ -7,27 +7,31 @@ public class Question2 {
 
     public static void displayAndRun() {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
+        int counter = 0;
+        String sequence = "";
+        String oldChar = "";
 
-        System.out.print("Make a color pattern(It should be include just R,G and B): ");
-        String pattern = scanner.nextLine();
+        while (counter < 5) {
+            System.out.print("Input a character: ");
+            String character = scanner.next();
 
-        if(pattern.length() == 5)
-            checkColors(pattern);
-        else
-            System.out.println("Your color pattern's lenght must be 5!");
-    }
+            sequence = sequence + pattern(character, oldChar);
+            System.out.println(sequence);
 
-    public static void checkColors(String colorPattern) {
-
-        for(int i = 0; i<colorPattern.length(); i++) {
-            if(i != colorPattern.length() -1 && colorPattern.charAt(i) == colorPattern.charAt(i+1)) {
-                System.out.println("Adjacent colors can not be the same!");
-                return;
-            }
+            oldChar = character;
+            counter++;
         }
-
-        System.out.println(colorPattern);
-
     }
 
+    public static String pattern(String character, String oldChar) {
+
+        if(!character.equalsIgnoreCase("r") && !character.equalsIgnoreCase("g") && !character.equalsIgnoreCase("b"))
+            return "";
+        else {
+            if(!oldChar.equals(character)) {
+                return character;
+            } else
+                return "";
+        }
+    }
 }
