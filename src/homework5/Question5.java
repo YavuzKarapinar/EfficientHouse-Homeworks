@@ -20,15 +20,17 @@ public class Question5 {
         int monthlyPayment = 50;
         double sumOfInterests = 0;
 
-        while(val >= 0) {
-            sumOfInterests += val*interest;
-            System.out.printf("Sum Of Interests: %.2f%n", sumOfInterests);
+        while(val > 0) {
+            if(val < 49)
+                monthlyPayment = val + (val * interest);
 
+            sumOfInterests += val * interest;
             val = val - (monthlyPayment - (val * interest));
 
             months++;
         }
 
+        System.out.printf("Sum Of Interests: %.2f%n", sumOfInterests);
         System.out.println("Total months: " + months);
 
     }
