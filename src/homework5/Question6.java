@@ -7,32 +7,29 @@ public class Question6 {
 
     public static void displayAndRun() {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
-        int iterator = 0;
+        int day = 0;
         while (true) {
 
-            System.out.print("\nIf you want to increase the population press the 1: ");
-            int choise = scanner.nextInt();
+            day += 5;
+            System.out.println(poundCalculator(day));
 
-            iterator += 5;
-            if(choise == 1)
-                fibonacci(iterator);
-            else
+            System.out.print("Press 0 to exit: ");
+            int choice = scanner.nextInt();
+            if(choice == 0)
                 break;
-
         }
-
     }
 
-    public static void fibonacci(int iteration) {
+    public static int poundCalculator(int day) {
         int a = 0;
         int b = 10;
 
-        for(int i = 0; i < iteration; i += 5) {
+        for(int i = 0; i < day / 5; i++) {
             int temp;
             temp = a;
             a = b;
             b += temp;
-            System.out.printf("%d ", a);
         }
+        return a;
     }
 }
