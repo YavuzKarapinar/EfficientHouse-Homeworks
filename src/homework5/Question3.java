@@ -10,31 +10,31 @@ public class Question3 {
 
         while (true) {
 
-            System.out.print("Choose the process(Earth: 1, Moon: 2, Exit:Other numbers)");
-            int process = scanner.nextInt();
+            System.out.print("Choose the process(Earth: e, Moon: m, Exit: q)");
+            String earthOrMoon = scanner.next();
 
-            if(process != 1 && process != 2)
+            if(!earthOrMoon.equalsIgnoreCase("e") && !earthOrMoon.equalsIgnoreCase("m"))
                 break;
 
             System.out.print("Mass of car: ");
             double mass = scanner.nextDouble();
 
-            System.out.printf("The weight of the car is %.2fN%n", weight(mass, process));
+            weight(mass, earthOrMoon);
 
         }
     }
 
-    public static double weight(double mass, double process) {
+    public static void weight(double mass, String earthOrMoon) {
         double result;
 
-        if(process == 1) {
+        if(earthOrMoon.equalsIgnoreCase("e")) {
             result = (mass) * (9.81);
-            return result;
-        } else if(process == 2) {
+            System.out.printf("Weight of the car is on the Earth: %.2fN %n", result);
+
+        }
+        if(earthOrMoon.equalsIgnoreCase("m")) {
             result = ((mass) * (9.81)) / 6;
-            return result;
-        } else {
-            return 0.;
+            System.out.printf("Weight of the car is on the Moon: %.2fN %n", result);
         }
     }
 }
