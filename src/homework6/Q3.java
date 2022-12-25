@@ -18,7 +18,7 @@ public class Q3 {
 
     public static void primeFactor(int number) {
         if(number < 2) {
-            System.out.println("0'dan küçük olamaz.");
+            System.out.println("2'den küçük olamaz.");
             return;
         }
 
