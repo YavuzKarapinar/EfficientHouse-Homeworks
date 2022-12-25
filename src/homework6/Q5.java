@@ -29,40 +29,17 @@ public class Q5 {
         return true;
     }
 
-    public static int sumPrimes(int a) {
-        int j = 2, k = a / 2;
-
-        for(int i = 0; i < a; i++) {
-
-            while (j <= a / 2) {
-                if(isPrime(j)) break;
-                else j++;
-            }
-
-            while (k <= a) {
-
-                if(isPrime(k)) break;
-                else k++;
-            }
-
-            if(j > a / 2) {
-                j = 2;
-                continue;
-            }
-
-            if(k > a) {
-                k = a / 2;
-                continue;
-            }
-
-
-            if(j + k == a)
-                return j + k;
-
-            j++; k++;
-        }
-
-        return 0;
+    public static String sumPrimes(int a) {
+        for(int i = 2; i <= a; i++)
+            
+            if(isPrime(i))
+                for(int j = a - i; j >= 2; j--)
+                    
+                    if(isPrime(j)) 
+                        if(i+j == a) 
+                            return i + " + " + j + " = " + a;
+        
+        return "Bulunamadı";
     }
 
     public static boolean isEven(int a) {
