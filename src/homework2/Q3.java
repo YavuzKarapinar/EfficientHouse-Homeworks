@@ -2,6 +2,10 @@ package homework2;
 
 public class Q3 {
     public static void main(String[] args) {
+        display();
+    }
+    
+    public static void display() {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
 
         System.out.print("Lütfen bir sayi giriniz:");
@@ -9,8 +13,7 @@ public class Q3 {
         int numberSign = signum(number);
 
         System.out.println("Sayının işareti: " + numberSign);
-
-
+        
     }
 
     public static int signum(int number) {
