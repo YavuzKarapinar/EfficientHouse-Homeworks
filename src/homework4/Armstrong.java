@@ -1,5 +1,7 @@
+/*
+Program will count 0 to 1000000 and find which number is an armstrong number.
+*/
 package homework4;
-
 public class Armstrong {
     public static void main(String[] args) {
         display();
@@ -9,31 +11,36 @@ public class Armstrong {
 
         for(int i = 0; i < 999999; i++)
             if(isArmStrong(i))
-                System.out.printf("%d sayısı bir armstrong sayıdır.%n", i);
+                System.out.printf("%d is an armstrong number.%n", i);
     }
 
     public static boolean isArmStrong(int a) {
-        return a == algorithm(a);
+        return a == findArmstrong(a);
     }
 
-    public static int algorithm(int a) {
-        int sum;
+    public static int findArmstrong(int a) {
+        int sum = 0;
         int digit = countDigits(a);
 
-        for(sum = 0; a != 0; a /= 10) {
+        do {
+
             sum += pow(a % 10, digit);
+            a /= 10;
+
         }
+        while (a != 0);
 
         return sum;
     }
 
     public static int pow(int a, int digit) {
-        int pow;
+        int pow = 1;
         int temp = digit;
 
-        for(pow = 1; temp != 0; temp--) {
+        do {
             pow *= a;
-        }
+            temp--;
+        } while(temp != 0);
 
         return pow;
 
@@ -41,11 +48,13 @@ public class Armstrong {
 
     public static int countDigits(int a) {
 
-        int count;
+        int count = 0;
 
-        for(count = 0; a > 0; a /= 10) {
+        do {
+            a /= 10;
             count++;
         }
+        while (a > 0);
 
         return count;
     }

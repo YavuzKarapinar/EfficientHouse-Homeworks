@@ -1,3 +1,20 @@
+/*
+A designer is trying to create a new pattern of five stripes using three colors. These
+colors and their codes are mentioned in the table below.
+
+Color Character Code
+Red R
+Green G
+Blue B
+
+The designer has to keep in mind that no two adjacent stripes are of the same color.
+For example, RRGBR is an invalid pattern, but RGBRB is valid.
+Write a program that accepts a sequence of five colors as input from the designer to
+form the pattern. At each selection the designer makes, the program should check if
+the input is from among the available set of colors. Also, the program should check
+that adjacent colors are not the same. At the end, the program should display the
+final stripe pattern created.
+*/
 package homework5;
 
 public class Question2 {

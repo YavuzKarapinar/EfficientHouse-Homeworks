@@ -1,3 +1,13 @@
+/*
+An Armstrong number is an n-digit number that equals the sum of the nth power
+of its digits. For example 153 is a three-digit number where the sum of the cubes
+of the individual digits (13 + 53 + 33) equals the number itself (153).
+
+ Write a program that takes as input the start and end numbers of an Armstrong
+number range to be printed. Your program should prompt for new start and end
+numbers until the user decides that she or he is through. Use variables of the type
+integer to store the start and end numbers of the range.
+*/
 package homework5;
 
 public class Question7 {

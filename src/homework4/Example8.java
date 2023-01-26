@@ -1,3 +1,6 @@
+/*
+Program take input numbers until input 0 and it will reverse and display numbers.
+*/
 package homework4;
 
 public class Example8 {

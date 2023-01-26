@@ -1,46 +1,25 @@
-package homework2;
+/*
+Body Mass Index (BMI) helps in specifying the weight category a person
+belongs to, depending on their body weight. BMI is estimated using the following formula:
 
+BMI = Weight in kilograms / (Height in meters)2
+
+Write a program that calculates and outputs the BMI. Assume various input values
+wherever required.
+*/
+package homework2;
 public class Q1 {
     public static void main(String[] args) {
-        display();
-    }
 
-    public static void display() {
-
+        double kilogram, meter, bmi;
         java.util.Scanner scanner = new java.util.Scanner(System.in);
 
-        System.out.print("Sayilari giriniz: ");
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int c = scanner.nextInt();
+        System.out.println("Kilogram: ");
+        kilogram = scanner.nextDouble();
+        System.out.println("Meter: ");
+        meter = scanner.nextDouble();
 
-        siralama(a, b, c);
+        bmi = kilogram / (meter * meter);
+        System.out.printf("Body Mass Index is: %.2f", bmi);
     }
-
-    public static void siralama(int a, int b, int c) {
-
-        int higher = hangisiBuyuk(hangisiBuyuk(a, b), c);
-        int lower = hangisiKucuk(hangisiKucuk(a, b), c);
-        int middle = a + b + c - higher - lower;
-
-        String middleLowerCheck = lower == middle ? "=" : "<";
-        String middleHigherCheck = middle == higher ? "=" : "<";
-        System.out.printf("%d%s%d%s%d", lower, middleLowerCheck, middle, middleHigherCheck, higher);
-
-    }
-
-    public static int hangisiBuyuk(int a, int b) {
-        if(a >= b)
-            return a;
-        else
-            return b;
-    }
-    public static int hangisiKucuk(int a, int b) {
-        if(a <= b)
-            return a;
-        else
-            return b;
-    }
-
-
 }

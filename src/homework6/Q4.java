@@ -1,3 +1,17 @@
+/*
+Program will taken input heigth and input width and it will display rebounded star with stars in loops.
+For example:
+|*    |
+| *   |
+|  *  |
+|   * |
+|    *|
+|   * |
+|  *  |
+| *   |
+|*    |
+| *   |
+*/
 package homework6;
 
 public class Q4 { 

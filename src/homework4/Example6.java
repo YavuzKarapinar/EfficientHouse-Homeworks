@@ -1,3 +1,6 @@
+/*
+Program will take an input number and it will display this number's digits.
+*/
 package homework4;
 
 public class Example6 {

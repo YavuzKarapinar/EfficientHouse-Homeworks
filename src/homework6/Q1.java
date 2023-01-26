@@ -1,3 +1,6 @@
+/*
+Program wants to us to make a diamond with stars using nested loops.
+*/
 package homework6;
 
 public class Q1 {
@@ -11,11 +14,11 @@ public class Q1 {
         System.out.print("Input number: ");
         int n = scanner.nextInt();
 
-        ustUcgen(n);
-        altUcgen(n);
+        upperTriangle(n);
+        lowerTriangle(n);
     }
 
-    public static void ustUcgen(int n) {
+    public static void upperTriangle(int n) {
         for (int i = 1; i <= n; i++) {
 
             for (int j = 1; j <= n - i; j++)
@@ -27,7 +30,7 @@ public class Q1 {
             System.out.println();
         }
     }
-    public static void altUcgen(int n) {
+    public static void lowerTriangle(int n) {
         for (int i = n - 1; i >= 1; i--) {
 
             for (int j = 1; j <= n - i; j++)

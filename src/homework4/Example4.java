@@ -1,3 +1,6 @@
+/*
+Program will taken numbers until 0 and then it will display sum of the positive numbers and sum of the negative numbers.
+*/
 package homework4;
 
 public class Example4 {

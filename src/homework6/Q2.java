@@ -1,3 +1,6 @@
+/*
+Program will take an input number and it will transform it to minutes and hours and it will display this time.
+*/
 package homework6;
 
 public class Q2 {
@@ -12,7 +15,7 @@ public class Q2 {
         long seconds = scanner.nextLong();
 
         if(seconds <= 0) {
-            System.out.println("Sayı negatif veya 0 olamaz.");
+            System.out.println("The number cannot be negative or 0.");
             return;
         }
 
@@ -33,9 +36,9 @@ public class Q2 {
 
     public static String textOfDuration(long hours, long minutes, long seconds) {
 
-        String hourText = hours != 0 ? hours + " saat " : "";
-        String minuteText = minutes != 0 ? minutes + " dakika " : "";
-        String secondText = seconds != 0 ? seconds + " saniye " : "";
+        String hourText = hours != 0 ? hours + " hours " : "";
+        String minuteText = minutes != 0 ? minutes + " minutes " : "";
+        String secondText = seconds != 0 ? seconds + " seconds " : "";
 
         return hourText + minuteText + secondText;
     }

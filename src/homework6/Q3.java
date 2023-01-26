@@ -1,3 +1,6 @@
+/*
+Program will take an input number and it will display this number's prime factor numbers.
+*/
 package homework6;
 
 public class Q3 {
@@ -18,7 +21,7 @@ public class Q3 {
 
     public static void primeFactor(int number) {
         if(number < 2) {
-            System.out.println("2'den küçük olamaz.");
+            System.out.println("The number cannot be lower than 2.");
             return;
         }
 

@@ -1,3 +1,6 @@
+/*
+Program will count 2 to 99999 and will display prime numbers.
+*/
 package homework4;
 
 public class IsPrime {
@@ -9,13 +12,13 @@ public class IsPrime {
     {
         for(long i = 2; i < 99999L; i++)
             if(isPrime(i))
-                System.out.printf("%d bir asal sayıdır.%n", i);
+                System.out.printf("%d is a prime number.%n", i);
     }
 
     public static boolean isPrime(long a) {
         if(a % 2 == 0)
             return a == 2;
-        
+
         if(a <= 1)
             return false;
 

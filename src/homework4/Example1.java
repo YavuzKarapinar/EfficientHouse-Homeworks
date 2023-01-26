@@ -1,3 +1,6 @@
+/*
+Program will take an input number an the countDigits method will take this argument and then it will return this number's digits.
+*/
 package homework4;
 
 public class Example1 {

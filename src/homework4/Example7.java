@@ -1,3 +1,6 @@
+/*
+Program will take an input number and it will sum of its digits.
+*/
 package homework4;
 
 public class Example7 {

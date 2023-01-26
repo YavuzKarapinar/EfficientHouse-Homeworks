@@ -1,3 +1,7 @@
+/*
+Even numbers can be sum of the 2 prime numbers. Program will take an even number
+and it will display this number's 2 prime sum numbers.
+*/
 package homework6;
 
 public class Q5 {
@@ -39,7 +43,7 @@ public class Q5 {
                         if(i+j == a) 
                             return i + " + " + j + " = " + a;
         
-        return "Bulunamadı";
+        return "Cannot found";
     }
 
     public static boolean isEven(int a) {

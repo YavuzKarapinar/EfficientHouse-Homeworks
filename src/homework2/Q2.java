@@ -1,22 +1,27 @@
+/*
+The video game machines at your local arcade output coupons according to
+how well you play the game. You can redeem 10 coupons for a candy bar or 3
+coupons for a gumball. You prefer candy bars to gumballs. Write a program that
+defines a variable initially assigned to the number of coupons you win. Next,
+the program should output how many candy bars and gumballs you can get if
+you spend all of your coupons on candy bars first, and any remaining coupons
+on gumballs.
+*/
 package homework2;
-
 public class Q2 {
     public static void main(String[] args) {
 
-        int mid = mid(9,6,7);
+        int ticket, candyBar, gumball;
 
-        System.out.println(mid);
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
 
-    }
+        System.out.println("Ticket Amount: ");
+        ticket = scanner.nextInt();
 
-    public static int mid(int a, int b, int c) {
-
-        if((a >= b && a <= c) || (a <= b && b >= c))
-            return a;
-
-        if((a <= b && b <= c) || (a >= b && b >= c))
-            return b;
-
-        return c;
+        candyBar = ticket / 10;
+        ticket = ticket % 10;
+        gumball = ticket / 3;
+        ticket = ticket % 3;
+        System.out.printf("You can get %d piece of candy bars and %d piece of Gumballs and number of remaining ticket is: %d", candyBar, gumball, ticket);
     }
 }
