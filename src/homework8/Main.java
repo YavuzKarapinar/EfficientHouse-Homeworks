@@ -22,6 +22,8 @@ class Behavior {
             dog.name = "Findik";
             dog.nutritureType = "Carnivore";
             eatWhat(dog);
+
+
         }
 
         public static void eatWhat(Human human) {
@@ -38,7 +40,6 @@ class Behavior {
 }
 
 class Human {
-
     public String name;
     public String nutritureType;
 }
