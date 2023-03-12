@@ -118,8 +118,12 @@ public class Market {
             System.out.print("password:");
             if (kb.nextLine().equals(card.getPassword())) {
 
-                if (cardControl(card, cost))
+                if (cardControl(card, cost)) {
+                    card.setBalance(card.getBalance() - cost);
+                    System.out.println("Successfully Paid");
+                    System.out.printf("Remaining Card Balance : %d%n", card.getBalance());
                     break;
+                }
 
             } else {
                 System.out.printf("Wrong password - Your remaining left %d%n", i - 1);
@@ -141,16 +145,12 @@ public class Market {
 
     public static boolean cardControl(Card card, int cost) {
 
-        if (checkBalance(card.getBalance(), cost)) {
-
-            card.setBalance(card.getBalance() - cost);
-            System.out.println("Successfully Paid");
-            System.out.printf("Remaining Card Balance : %d%n", card.getBalance());
-
-        } else
+        if (checkBalance(card.getBalance(), cost))
+            return true;
+        else
             System.out.println("Insufficient Balance");
 
-        return true;
+        return false;
     }
 
     public static boolean checkBalance(int balance, int cost) {

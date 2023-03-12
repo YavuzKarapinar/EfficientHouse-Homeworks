@@ -2,6 +2,7 @@ package homework10;
 
 public class Phone {
     public String phoneNumber;
+    public BankApp bankApp;
 
     Phone(String newPhoneNumber)
     {
