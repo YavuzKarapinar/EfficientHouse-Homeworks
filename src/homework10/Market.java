@@ -17,6 +17,7 @@ public class Market {
         String paymentChoice = kb.nextLine();
 
         payment(paymentChoice, customer.getWallet(), cost);
+
     }
 
     public static int buyForFriend(Customer customer, Customer friend) {
