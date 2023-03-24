@@ -6,39 +6,42 @@ public class HowManyElevenIncludes {
 
         System.out.print("Enter number: ");
         long number = kb.nextLong();
+        System.out.print("Which number do you want to search?");
+        int wantedNumber = kb.nextInt();
 
-        int includesEleven = howManyElevenIncludes(number);
+        int includesNumber = includesSpecificNumber(number, wantedNumber);
 
-        System.out.printf("Includes %d elevens", includesEleven);
+        System.out.printf("Includes %d elevens", includesNumber);
 
     }
 
-    public static int howManyElevenIncludes(long number) {
-        int includesEleven = 0;
+    public static int includesSpecificNumber(long number, int wantedNumber) {
+        int includesNumber = 0;
 
         String len = "" + number;
-        int place = len.length() -1;
+        int place = len.length() - 1;
 
         while (place >= 0) {
 
             long temp = number;
 
             temp %= 100;
-            //System.out.println("Temp: " + temp);
 
             number /= 10;
-            //System.out.println("Number: " + number);
 
-            if(temp == 11) {
-                includesEleven++;
+            if(wantedNumberCheck(temp, wantedNumber)) {
+                includesNumber++;
                 System.out.println("Eleven in the " + place + "th place");
             }
 
             place--;
-
         }
 
-        return includesEleven;
+        return includesNumber;
+    }
+
+    public static boolean wantedNumberCheck(long number, int wantedNumber) {
+        return number == wantedNumber;
     }
 
 }
