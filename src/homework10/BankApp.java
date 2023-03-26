@@ -89,7 +89,6 @@ public class BankApp {
         int toSendMoney = Integer.parseInt(kb.nextLine());
 
         withdrawProcess(receiver, toSendMoney);
-
     }
 
     public void withdrawProcess(Card receiver, int toSendMoney) {

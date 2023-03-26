@@ -19,29 +19,41 @@ public class HowManyElevenIncludes {
         int includesNumber = 0;
 
         String len = "" + number;
+
         int place = len.length() - 1;
 
         while (place >= 0) {
 
-            long temp = number;
-
-            temp %= 100;
+            if(wantedNumberCheck(number, wantedNumber)) {
+                includesNumber++;
+                System.out.println(wantedNumber + " in the " + place + "th place");
+            }
 
             number /= 10;
-
-            if(wantedNumberCheck(temp, wantedNumber)) {
-                includesNumber++;
-                System.out.println("Eleven in the " + place + "th place");
-            }
 
             place--;
         }
 
-        return includesNumber;
+        return includesNumber == 0 ? -1 : includesNumber;
     }
 
     public static boolean wantedNumberCheck(long number, int wantedNumber) {
-        return number == wantedNumber;
+        long digit = (long) Math.pow(10, countDigits(wantedNumber));
+
+        return number % digit == wantedNumber;
+    }
+
+    public static int countDigits(int a) {
+
+        int count = 0;
+
+        do {
+            a /= 10;
+            count++;
+        }
+        while (a > 0);
+
+        return count;
     }
 
 }

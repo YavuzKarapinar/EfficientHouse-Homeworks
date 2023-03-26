@@ -153,7 +153,6 @@ public class Market {
 
         return false;
     }
-
     public static boolean checkBalance(int balance, int cost) {
         return balance >= cost;
     }
