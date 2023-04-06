@@ -34,14 +34,14 @@ public class Q1 {
     public static int biggerOne(int a, int b) {
         if(a >= b)
             return a;
-        else
-            return b;
+
+        return b;
     }
     public static int smallerOne(int a, int b) {
         if(a <= b)
             return a;
-        else
-            return b;
+
+        return b;
     }
 
 }
