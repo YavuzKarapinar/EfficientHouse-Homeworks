@@ -9,51 +9,29 @@ public class HowManyElevenIncludes {
         System.out.print("Which number do you want to search?");
         int wantedNumber = kb.nextInt();
 
-        int includesNumber = includesSpecificNumber(number, wantedNumber);
+        int includesNumber = includesWantedNumber(String.valueOf(number), String.valueOf(wantedNumber));
 
         System.out.printf("Includes %d elevens", includesNumber);
-
     }
 
-    public static int includesSpecificNumber(long number, int wantedNumber) {
-        int includesNumber = 0;
+    public static int includesWantedNumber(String number, String wantedNumber) {
 
-        String len = "" + number;
+        String str;
+        int includedNumber = 0;
 
-        int place = len.length() - 1;
+        for(int i = 0; i < number.length(); i++) {
 
-        while (place >= 0) {
+            if(i != number.length() - 1) {
+                str = String.valueOf(number.charAt(i) + number.charAt(i + 1));
 
-            if(wantedNumberCheck(number, wantedNumber)) {
-                includesNumber++;
-                System.out.println(wantedNumber + " in the " + place + "th place");
+                if(str.equals(wantedNumber)) {
+                    includedNumber++;
+                    System.out.printf("%s is in the %dth place%n", wantedNumber, i + 1);
+                }
             }
 
-            number /= 10;
-
-            place--;
         }
-
-        return includesNumber == 0 ? -1 : includesNumber;
-    }
-
-    public static boolean wantedNumberCheck(long number, int wantedNumber) {
-        long digit = (long) Math.pow(10, countDigits(wantedNumber));
-
-        return number % digit == wantedNumber;
-    }
-
-    public static int countDigits(int a) {
-
-        int count = 0;
-
-        do {
-            a /= 10;
-            count++;
-        }
-        while (a > 0);
-
-        return count;
+        return includedNumber;
     }
 
 }
